@@ -10,7 +10,6 @@ public class HelloWorld {
 		System.out.println("남자");
 		System.out.println("10087");
 		System.out.println("101");
-		System.out.println("호");
 		
 	}
 
