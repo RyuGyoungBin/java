@@ -117,6 +117,13 @@ public class Extr0602 {
 			}
 			System.out.println("");
 		}
+		int val;
+		int[] lo = new int[11];
+		for(int q=0; q<11; q++) {
+			val = (int)(Math.random()*100);
+			lo[q] = val;
+			System.out.print(lo[q]+" ");
+		}
 		
 		
 		
