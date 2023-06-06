@@ -1,5 +1,8 @@
 package com.mycompany.study.ch05;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class ExLotto {
 
 	public static void main(String[] args) {
@@ -8,39 +11,58 @@ public class ExLotto {
 		//중복 숫자 제거
 		//3연속 번호 불가
 		//보너스 제외
-		// 1  5  3
-		int min = 1;
-		int max = 45;
-		int temp = 0;
-		int random = (int)((Math.random()*(max - min)) + min);
-		int random2 = (int)((Math.random()*(max - min)) + min);
-		int random3 = (int)((Math.random()*(max - min)) + min);
-		int random4 = (int)((Math.random()*(max - min)) + min);
-		int random5 = (int)((Math.random()*(max - min)) + min);
-		int random6 = (int)((Math.random()*(max - min)) + min);
-
-		int[] lotto = {random, random2, random3, random4, random5, random6};
 		
-		for(int i=0; i<lotto.length; i++) {
-			System.out.print(lotto[i]+ " ");
-		}
-		System.out.println();
-		// 정렬
-		for(int i=0; i<lotto.length; i++) {
-			for(int j=0; j<i; j++) {
-				if(lotto[i] < lotto[j]) {
-					temp = lotto[j];
-					lotto[j] = lotto[i];
-					lotto[i] = temp;
+		// 중복제거
+		int max = 45;
+		int min = 1;
+		int[] lotto = new int[6];
+		lotto[0] = (int)((Math.random()*(max - min)) + min);
+		
+		for(int i=1; i<lotto.length;i++) {
+			lotto[i] = (int)((Math.random()*(max - min)) + min);
+			System.out.println(i +":"+lotto[i]);
+			for(int j=0; j<i;j++) {
+				if(lotto[i] == lotto[j]) {
+					lotto[i] = (int)((Math.random()*(max - min)) + min);
+				} else {
+					
 				}
 			}
-		}
-		for(int i=0; i<lotto.length; i++) {
-			System.out.print(lotto[i]+ " ");
+			//System.out.println(lotto[i]);
 		}
 		
+		// 정렬
+		int temp = 0;
+		for(int i=0; i<lotto.length; i++) { 
+			for(int j=0; j<i; j++) { 
+				if(lotto[i] < lotto[j]) { 
+					temp = lotto[j]; 
+					lotto[j] = lotto[i];
+					lotto[i] = temp; 
+					} 
+				} 
+			}
+		
+		//3연속 번호 제거
+		for(int i=0; i<lotto.length;i++) {
+			for(int j=0; j<lotto.length;j++) {
+				for(int k=0; k<lotto.length; k++) {
+					if(lotto[i]+1 == lotto[j] && lotto[j]+1 == lotto[k]) {
+						lotto[i] = (int)((Math.random()*(max - min)) + min);
+						lotto[j] = (int)((Math.random()*(max - min)) + min);
+						lotto[k] = (int)((Math.random()*(max - min)) + min);
+					} else {
+						
+					}
+				}
+			}
+			//System.out.println(lotto[i]);
+		}
 		
 		
+		for(int x=0; x<lotto.length; x++) {
+			System.out.println(x+": "+lotto[x]);
+		}
 	}
 
 }
