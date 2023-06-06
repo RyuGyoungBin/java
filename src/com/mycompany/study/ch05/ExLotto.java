@@ -16,12 +16,11 @@ public class ExLotto {
 		int max = 45;
 		int min = 1;
 		int[] lotto = new int[6];
-		lotto[0] = (int)((Math.random()*(max - min)) + min);
 		
-		for(int i=1; i<lotto.length;i++) {
+		for(int i=0; i<lotto.length;i++) {
 			lotto[i] = (int)((Math.random()*(max - min)) + min);
 			System.out.println(i +":"+lotto[i]);
-			for(int j=0; j<i;j++) {
+			for(int j=1; j<i;j++) {
 				if(lotto[i] == lotto[j]) {
 					lotto[i] = (int)((Math.random()*(max - min)) + min);
 				} else {
