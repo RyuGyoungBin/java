@@ -20,7 +20,7 @@ public class ExLotto {
 		for(int i=0; i<lotto.length;i++) {
 			lotto[i] = (int)((Math.random()*(max - min)) + min);
 			System.out.println(i +":"+lotto[i]);
-			for(int j=1; j<i;j++) {
+			for(int j=0; j<i;j++) {
 				if(lotto[i] == lotto[j]) {
 					lotto[i] = (int)((Math.random()*(max - min)) + min);
 				} else {
@@ -29,18 +29,6 @@ public class ExLotto {
 			}
 			//System.out.println(lotto[i]);
 		}
-		
-		// 정렬
-		int temp = 0;
-		for(int i=0; i<lotto.length; i++) { 
-			for(int j=0; j<i; j++) { 
-				if(lotto[i] < lotto[j]) { 
-					temp = lotto[j]; 
-					lotto[j] = lotto[i];
-					lotto[i] = temp; 
-					} 
-				} 
-			}
 		
 		//3연속 번호 제거
 		for(int i=0; i<lotto.length;i++) {
@@ -58,10 +46,32 @@ public class ExLotto {
 			//System.out.println(lotto[i]);
 		}
 		
+		// 정렬
+		int temp = 0;
+		for(int i=0; i<lotto.length; i++) { 
+			for(int j=0; j<i; j++) { 
+				if(lotto[i] < lotto[j]) { 
+					temp = lotto[j]; 
+					lotto[j] = lotto[i];
+					lotto[i] = temp; 
+					} 
+				} 
+			}
+		
+		
+		
+		String lottoString =Integer.toString(lotto[0])+"/"+Integer.toString(lotto[2])+"/"+Integer.toString(lotto[3])+"/"+Integer.toString(lotto[4])+"/"+Integer.toString(lotto[5]);
+
+		
+		
+		
 		
 		for(int x=0; x<lotto.length; x++) {
 			System.out.println(x+": "+lotto[x]);
+			System.out.println(lottoString);
 		}
+		
+		
 	}
 
 }

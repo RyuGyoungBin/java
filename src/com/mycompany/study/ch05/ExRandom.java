@@ -22,11 +22,11 @@ public class ExRandom {
 		
 		System.out.println("sum : "+sum);
 		int[] lotto = new int[6];
-		lotto[0] = 1;
+		lotto[0] = 7;
 		lotto[1] = 2;
 		lotto[2] = 3;
-		lotto[3] = 5;
-		lotto[4] = 7;
+		lotto[3] = 1;
+		lotto[4] = 5;
 		lotto[5] = 9;
 		for(int i=0; i<lotto.length;i++) {
 			for(int j=0; j<lotto.length;j++) {
@@ -44,8 +44,7 @@ public class ExRandom {
 			}
 			System.out.println(lotto[i]);
 		}
-
-		
+	
 		for(int x=0; x<lotto.length; x++) {
 			System.out.println(x+": "+(int)lotto[x]);
 		}
