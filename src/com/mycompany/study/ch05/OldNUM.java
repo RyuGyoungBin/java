@@ -1081,13 +1081,19 @@ public class OldNUM {
 		int min = 1;
 		int[] lotto = new int[6];
 		
+		boolean lottoSame = true;
+		boolean lottoconti = true;
+		boolean lottoPrev = true;
+		aa:
 		for(int i=0; i<lotto.length;i++) {
 			lotto[i] = (int)((Math.random()*(max - min)) + min);
 			System.out.println(i +":"+lotto[i]);
 			for(int j=0; j<i;j++) {
 				if(lotto[i] == lotto[j]) {
 					lotto[i] = (int)((Math.random()*(max - min)) + min);
+					break aa;
 				} else {
+					lottoSame =false;
 					
 				}
 			}

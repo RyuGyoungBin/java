@@ -1195,5 +1195,4 @@ public class ExLottoT {
 				}
 				
 			}
-// https://themeforest.net/category/site-templates?compatible_with=Bootstrap&sort=sales&term=ticketing#content
 }
