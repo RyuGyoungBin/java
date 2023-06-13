@@ -9,20 +9,22 @@ public class TrExGugu {
 
 		
 		Scanner scanner = new Scanner(System.in);
-		boolean flag = true;
-		while(flag) {
-			System.out.println("정수를 입력하세요");
-			int x = scanner.nextInt();
-			
-			if(x != 0) {
-				System.out.println("선택된 정수 : "+x);
-				TrGugu.gugu(x);
-			} else {
-				flag = false;
-				System.out.println("0이 선택되어 종료됩니다.");
-			}
-		}
+		/*
+		 * boolean flag = true; while(flag) { System.out.println("정수를 입력하세요"); int x =
+		 * scanner.nextInt();
+		 * 
+		 * if(x != 0) { System.out.println("선택된 정수 : "+x); TrGugu.gugu(x); } else { flag
+		 * = false; System.out.println("0이 선택되어 종료됩니다."); } }
+		 */
 		
+		boolean f = true;
+		while(f) {
+			System.out.println("정수를 선택하세요");
+			int x = scanner.nextInt();
+			System.out.println("선택된 정수 : "+x);
+			f = TrGugu.gugudan(x);
+		}
+		System.out.println("0이 선택되어 종료됩니다");
 	}
 
 }
